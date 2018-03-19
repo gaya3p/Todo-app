@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:500');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Asap Condensed", "Roboto", sans-serif;
+  --primary-color: #21BA99;
+  --red: #d32e2e;
+}
+
+input::placeholder {
+  font-size: 15px;
+  color: #fffd;
+}
+
+::selection {
+  background: #ffffffb9;
+}
+
+body {
+  font-family: var(--font);
+  background: #edf0f1;
+  
+}
+
+header {
+  width: 100%;
+  height: 80px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 5;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+
+  background: var(--primary-color);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 8px 21px 21px 8px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border: none;
+  padding: 3px;
+  text-indent: 15px;
+  
+  font-size: 1.3rem;
+  font-family: var(--font);
+}
+
+header button {
+  height: 52px;
+  width: 52px;
+
+  position: absolute;
+  top: 14px;
+  right: 12px;
+
+  color: var(--primary-color);
+  background: #fff;
+  border: none;
+
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: color .1s ease-in-out,
+              background .1s ease-in-out;
+}
+
+header button:active {
+  color: #fff;
+  background: var(--primary-color) ;
+}
+
+
+
+section {
+  margin-top: 100px;
+  padding: 0 10px;
+}
+
+ul li {
+  position: relative;
+  display: flex;
+
+  margin: 0 0 10px 0;
+  padding: 12px;
+  box-shadow: 0 1px 1px #cec3c379;
+  border-radius: 4px;
+
+  background: #fff;
+  font-size: 1.1rem;
+  word-break: break-word;
+}
+
+
+
+.bar {
+  width: 30%;
+  height: 1px;
+  margin: 30px auto;
+
+  background: #cec3c379;
+}
+
+
+.check-btn,
+.trash-btn {
+  background: #fff0;
+  border: 0;
+  font-size: 1.4rem;
+  color: #9B9B9B;
+}
+
+.check-btn *,
+.trash-btn * {
+  transition: fill .1s ease-in-out;
+}
+
+.check-btn {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.check-btn:hover {
+  color: var(--primary-color);
+}
+
+.trash-btn {
+  position: absolute;
+  top:50%;
+  right: 5px;
+  transform: translateY(-50%)
+}
+
+.trash-btn:hover {
+  color: var(--red);
+}
+
+.strike-line {
+  position: absolute;
+  top: 23px;
+  left: 40px;
+
+  display: inline-block;
+  height: 2px;
+
+  background: #333;
+
+  animation: strike-line .3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+@keyframes strike-line {
+
+  from { width: 0% }
+  to { width: calc( 100vw - 100px ) }  
+
+}
+
+#todo:empty:after {
+  content: 'You have nothing to do 😎';
+
+}
+
+#completed:empty:after {
+  content: 'You haven\'t completed any tasks yet 😋'
+}
+
+#completed:empty:after,
+#todo:empty:after {
+  color: #555;
+  display: block;
+  width: 100%;
+  text-align: center;
+  opacity: .7;
+  font-size: .9rem;
+}
