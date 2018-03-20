@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:500');
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:500|Roboto');
 
 * {
   margin: 0;
@@ -10,6 +10,11 @@
   --font: "Asap Condensed", "Roboto", sans-serif;
   --primary-color: #21BA99;
   --red: #d32e2e;
+}
+
+input,
+button {
+  outline: none;
 }
 
 input::placeholder {
@@ -26,6 +31,8 @@ body {
   background: #edf0f1;
   
 }
+
+/* HEADER */
 
 header {
   width: 100%;
@@ -81,12 +88,14 @@ header button:active {
   background: var(--primary-color) ;
 }
 
-
+/* SECTION */
 
 section {
   margin-top: 100px;
   padding: 0 10px;
 }
+
+/* TODO ITEM */
 
 ul li {
   position: relative;
@@ -102,16 +111,7 @@ ul li {
   word-break: break-word;
 }
 
-
-
-.bar {
-  width: 30%;
-  height: 1px;
-  margin: 30px auto;
-
-  background: #cec3c379;
-}
-
+/* BUTTONS */
 
 .check-btn,
 .trash-btn {
@@ -146,29 +146,31 @@ ul li {
   color: var(--red);
 }
 
+/* STRIKETHROUGH LINE */
+
 .strike-line {
   position: absolute;
   top: 23px;
   left: 40px;
-
+  
   display: inline-block;
   height: 2px;
-
+  
   background: #333;
-
+  
   animation: strike-line .3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
 }
 
 @keyframes strike-line {
-
   from { width: 0% }
   to { width: calc( 100vw - 100px ) }  
-
 }
+
+/* EMPTY PLACEHOLDERS */
 
 #todo:empty:after {
   content: 'You have nothing to do 😎';
-
+  
 }
 
 #completed:empty:after {
@@ -183,4 +185,13 @@ ul li {
   text-align: center;
   opacity: .7;
   font-size: .9rem;
+}
+
+/* SMALL THIN BAR */
+.bar {
+  width: 37%;
+  height: 1px;
+  margin: 30px auto;
+
+  background: #cec3c379;
 }
