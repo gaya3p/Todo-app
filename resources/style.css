@@ -65,7 +65,7 @@ input[type="text"] {
   font-family: var(--font);
 }
 
-header button {
+#add {
   height: 52px;
   width: 52px;
 
@@ -83,11 +83,19 @@ header button {
               background .1s ease-in-out;
 }
 
-header button:active {
-  color: #fff;
-  background: var(--primary-color) ;
+#add svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--primary-color) ;
 }
 
+#add:active {
+  background:var(--primary-color);
+}
+
+#add:active svg{
+  fill:#fff;
+}
 /* SECTION */
 
 section {
@@ -103,6 +111,7 @@ ul li {
 
   margin: 0 0 10px 0;
   padding: 12px;
+  padding-right: 25px;
   box-shadow: 0 1px 1px #cec3c379;
   border-radius: 4px;
 
@@ -117,13 +126,19 @@ ul li {
 .trash-btn {
   background: #fff0;
   border: 0;
-  font-size: 1.4rem;
   color: #9B9B9B;
+}
+
+.check-btn svg,
+.trash-btn svg {
+  width: 1.4rem;
+  height: 1.4rem;  
+  fill: #555
 }
 
 .check-btn *,
 .trash-btn * {
-  transition: fill .1s ease-in-out;
+  transition: fill .1s ease-out;
 }
 
 .check-btn {
@@ -131,8 +146,9 @@ ul li {
   font-size: 1.2rem;
 }
 
-.check-btn:hover {
-  color: var(--primary-color);
+.check-btn:hover svg,
+#completed .check-btn svg{
+  fill: var(--primary-color);
 }
 
 .trash-btn {
@@ -142,8 +158,8 @@ ul li {
   transform: translateY(-50%)
 }
 
-.trash-btn:hover {
-  color: var(--red);
+.trash-btn:hover svg{
+  fill: var(--red);
 }
 
 /* STRIKETHROUGH LINE */
@@ -156,7 +172,7 @@ ul li {
   display: inline-block;
   height: 2px;
   
-  background: #333;
+  background: var(--red);
   
   animation: strike-line .3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
 }
@@ -167,7 +183,6 @@ ul li {
 }
 
 /* EMPTY PLACEHOLDERS */
-
 #todo:empty:after {
   content: 'You have nothing to do 😎';
   
