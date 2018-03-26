@@ -2,18 +2,27 @@
 <html lang="en">
 
 <head>
+  <!-- META TAGS -->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta charset="UTF-8">
 
+  <!-- THEME COLOR FOR MOBILE VERSION -->
+  <meta name="theme-color" content="#28a58a">
+
+  <!-- TITLE -->
   <title>What To-do</title>
 
+  <!-- TIME TRACKER -->
   <script type="text/javascript">
     var start = Date.now();
   </script>
 
-
+  <!-- ICON -->
   <link rel="shortcut icon" href="resources/icon.ico" type="image/ico">
+
+  <!-- CSS STYLESHEET (START) -->
   <link rel="stylesheet" href="resources/style.css">
+
 </head>
 
 <body>
@@ -30,6 +39,7 @@
     <!-- UNCOMPLETED TASKS -->
     <ul class="todo" id="todo"></ul>
 
+    <!-- CUTE THIN BAR IN BETWEEN -->
     <div class="bar"></div>
 
     <!-- COMPLETED TASKS -->
@@ -40,10 +50,10 @@
   <!-- JAVASCRIPTS -->
   <script src="resources/index.js"></script>
 
+  <!-- TIME TRACKER (END) -->
   <script type="text/javascript">
     console.log("Page load took " + (Date.now() - start) + " milliseconds");
   </script>
 
 </body>
-
 </html>
