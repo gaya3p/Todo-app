@@ -184,7 +184,7 @@ ul li {
 
 /* EMPTY PLACEHOLDERS */
 #todo:empty:after {
-  content: 'You have nothing to do 😎';
+  content: 'You have nothing to do 😎... Enjoy!';
   
 }
 
