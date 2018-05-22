@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:500|Roboto');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+@font-face { 
+  font-family:"Asap Condensed";
+  src: url("asapCondensed.ttf") /* TTF file for CSS3 browsers */
+}
+
 :root {
-  --font: "Asap Condensed", "Roboto", sans-serif;
+  --font: "Asap Condensed", sans-serif;
   --primary-color: #21BA99;
   --red: #d32e2e;
+  --body-back: #edf0f1;
+  --selection-color: #ffffffb9;
+  --placeholder-color: #fffd;
 }
 
 input,
@@ -19,17 +25,16 @@ button {
 
 input::placeholder {
   font-size: 15px;
-  color: #fffd;
+  color: var(--placeholder-color);
 }
 
 ::selection {
-  background: #ffffffb9;
+  background: var(--selection-color);
 }
 
 body {
   font-family: var(--font);
-  background: #edf0f1;
-  
+  background: var(--body-back);
 }
 
 /* HEADER */
@@ -68,6 +73,8 @@ input[type="text"] {
 #add {
   height: 52px;
   width: 52px;
+  display: flex;
+  justify-content: center;
 
   position: absolute;
   top: 14px;
@@ -111,6 +118,7 @@ ul li {
 
   margin: 0 0 10px 0;
   padding: 12px;
+  padding-bottom: 7px;
   padding-right: 25px;
   box-shadow: 0 1px 1px #cec3c379;
   border-radius: 4px;
@@ -166,7 +174,7 @@ ul li {
 
 .strike-line {
   position: absolute;
-  top: 23px;
+  top: 50%;
   left: 40px;
   
   display: inline-block;
@@ -184,7 +192,7 @@ ul li {
 
 /* EMPTY PLACEHOLDERS */
 #todo:empty:after {
-  content: 'You have nothing to do 😎... Enjoy!';
+  content: 'You have nothing to do 😎';
   
 }
 
@@ -204,9 +212,10 @@ ul li {
 
 /* SMALL THIN BAR */
 .bar {
-  width: 37%;
+  width: 60%;
   height: 1px;
   margin: 30px auto;
 
   background: #cec3c379;
+  background: linear-gradient( to right, transparent, #bbb, transparent )
 }
